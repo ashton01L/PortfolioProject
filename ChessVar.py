@@ -131,9 +131,6 @@ class ChessVar:
         # Empty square should remain hidden unless player can reach them
         return False
 
-
-
-
     def _is_valid_move(self, piece, from_square, to_square):
         """
         Checks the validity of a requested move for the given piece.
