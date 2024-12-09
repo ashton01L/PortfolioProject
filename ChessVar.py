@@ -115,17 +115,20 @@ class ChessVar:
         player_pieces = 'PNBRQK' if perspective == "white" else 'pnbrqk'
         opponent_pieces = 'pnbrqk' if perspective == "white" else 'PNBRQK'
 
-        # Check if the player's piece can reach this square
+        # Always reveal opponent's pieces
+        if self._board[row][col] in opponent_pieces:
+            return True
+
+        # Reveal the square if it contains the player's piece
+        if self._board[row][col] in player_pieces:
+            return True
+
+        # Otherwise, check if the player's piece can legally reach this square
         for r in range(8):
             for c in range(8):
                 piece = self._board[r][c]
-                if piece in player_pieces:
-                    if self._can_piece_reach((r, c), (row, col), piece):
-                        return True  # Player can reach this square
-
-        # If the square is occupied by the opponent's piece, make it visible
-        if self._board[row][col] in opponent_pieces:
-            return True
+                if piece in player_pieces and self._can_piece_reach((r, c), (row, col), piece):
+                    return True
 
         return False
 
@@ -248,18 +251,6 @@ class ChessVar:
         """
         column, row = notation
         return 8 - int(row), ord(column) - ord('a')
-
-    def display_board_as_list(self, board):
-        """
-        Prints the board in a readable nested list format.
-
-        :param:
-            board: A nested list representing the chessboard.
-        """
-        print("[")
-        for row in board:
-            print(f"  {row},")
-        print("]")
 
 # Sample game:
 # game = ChessVar()
