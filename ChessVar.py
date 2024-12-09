@@ -115,9 +115,15 @@ class ChessVar:
         player_pieces = 'PNBRQK' if perspective == "white" else 'pnbrqk'
         opponent_pieces = 'pnbrqk' if perspective == "white" else 'PNBRQK'
 
-        # Always reveal opponent's pieces
+        # Always reveal opponent's pieces only when in attack or within legal reach
         if self._board[row][col] in opponent_pieces:
-            return True
+            # If this square is an opponent's piece, check if it's visible based on legal movement
+            for r in range(8):
+                for c in range(8):
+                    piece = self._board[r][c]
+                    if piece in player_pieces and self._can_piece_reach((r, c), (row, col), piece):
+                        return True
+            return False
 
         # Reveal the square if it contains the player's piece
         if self._board[row][col] in player_pieces:
