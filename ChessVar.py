@@ -92,6 +92,13 @@ class ChessVar:
         if not self._is_valid_move(piece, (from_row, from_col), (to_row, to_col)):
             return False
 
+        # Check if the target square contains an opponent's piece (capture)
+        target_piece = self._board[to_row][to_col]
+        if target_piece != ' ' and self._is_valid_turn(
+                target_piece):  # If it's the same player's piece, can't capture
+            # Opponent's piece is captured (removed from the board)
+            self._board[to_row][to_col] = ' '  # Remove the opponent's piece
+
         # Perform the move
         self._board[to_row][to_col] = piece
         self._board[from_row][from_col] = ' '
