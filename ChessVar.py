@@ -68,6 +68,10 @@ class ChessVar:
         if perspective == "black":
             hidden_board = hidden_board[::-1]
 
+            # Manually swap black's pawns and royal pieces after reversing
+            hidden_board[0] = ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r']  # Royal pieces (black)
+            hidden_board[1] = ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p']  # Pawns (black)
+
         return hidden_board
 
     def make_move(self, from_square, to_square):
