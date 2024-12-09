@@ -65,11 +65,12 @@ class ChessVar:
                 elif self._board[r][c] == ' ':
                     hidden_board[r][c] = ' '  # Empty squares remain empty
 
-        if perspective == "white":
-            return hidden_board
-        else:
-            # Reverse the board for black's perspective
-            return hidden_board[::-1]
+        if perspective == "black":
+            hidden_board = hidden_board[::-1]
+
+        return hidden_board
+
+
 
     def make_move(self, from_square, to_square):
         """
