@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a804ceb8-ee26-494c-b867-6ff3b6d875d0" name="Changes" comment="hopefully the final version(?)" />
+    <list default="true" id="a804ceb8-ee26-494c-b867-6ff3b6d875d0" name="Changes" comment="hopefully the final version(?)">
+      <change beforePath="$PROJECT_DIR$/ChessVar.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChessVar.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733724350734</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="hopefully the final version(?)">
+      <option name="closed" value="true" />
+      <created>1733725062947</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733725062947</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
