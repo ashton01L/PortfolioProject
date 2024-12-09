@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a804ceb8-ee26-494c-b867-6ff3b6d875d0" name="Changes" comment="final version">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a804ceb8-ee26-494c-b867-6ff3b6d875d0" name="Changes" comment="updated final version" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,12 +74,29 @@
       <option name="project" value="LOCAL" />
       <updated>1733723041505</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="final version">
+      <option name="closed" value="true" />
+      <created>1733723079569</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733723079569</updated>
+    </task>
+    <task id="LOCAL-00004" summary="updated final version">
+      <option name="closed" value="true" />
+      <created>1733723587013</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733723587013</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chessvar outline" />
     <MESSAGE value="final version" />
-    <option name="LAST_COMMIT_MESSAGE" value="final version" />
+    <MESSAGE value="updated final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated final version" />
   </component>
 </project>
