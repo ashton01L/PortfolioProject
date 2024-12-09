@@ -59,7 +59,7 @@ class ChessVar:
                 square = (r, c)
                 piece = self._board[r][c]
                 if piece in player_pieces:
-                    hidden_board[r][c] = piece.upper() if perspective == "white" else piece.lower()  # Always show own pieces
+                    hidden_board[r][c] = piece  # Always show own pieces
                 elif self._is_square_visible(square, perspective):
                     hidden_board[r][c] = piece  # Show the piece if it's visible
                 else:
