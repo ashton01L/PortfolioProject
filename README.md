@@ -1,0 +1,1 @@
+Create a class called ChessVar to implement an abstract board game based on a chess variant known as Fog of War chess.
