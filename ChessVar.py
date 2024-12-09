@@ -70,8 +70,6 @@ class ChessVar:
 
         return hidden_board
 
-
-
     def make_move(self, from_square, to_square):
         """
         Attempts to make a move from the specified square (from_square) to the target square (to_square).
@@ -115,12 +113,20 @@ class ChessVar:
         """
         row, col = square
         player_pieces = 'PNBRQK' if perspective == "white" else 'pnbrqk'
+        opponent_pieces = 'pnbrqk' if perspective == "white" else 'PNBRQK'
 
+        # Check if the player's piece can reach this square
         for r in range(8):
             for c in range(8):
                 piece = self._board[r][c]
-                if piece in player_pieces and self._can_piece_reach((r, c), square, piece):
-                    return True
+                if piece in player_pieces:
+                    if self._can_piece_reach((r, c), (row, col), piece):
+                        return True  # Player can reach this square
+
+        # If the square is occupied by the opponent's piece, make it visible
+        if self._board[row][col] in opponent_pieces:
+            return True
+
         return False
 
     def _is_valid_move(self, piece, from_square, to_square):
