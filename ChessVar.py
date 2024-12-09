@@ -62,8 +62,6 @@ class ChessVar:
                     hidden_board[r][c] = piece  # Always show own pieces
                 elif self._is_square_visible(square, perspective):
                     hidden_board[r][c] = piece  # Show the piece if it's visible
-                elif self._board[r][c] == ' ':
-                    hidden_board[r][c] = ' '  # Empty squares remain empty
                 else:
                     hidden_board[r][c] = '*' # Non-visible squares remain '*'
 
