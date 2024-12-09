@@ -48,7 +48,8 @@ class ChessVar:
             nested list: nested list representing the board, where 'a8' is [0,0] and 'h1' is [7,7].
         """
         if perspective == "audience":
-            return "[\n " + ",\n ".join(str(row) for row in self._board) + "\n]"
+            # Return the actual board as a nested list, without any string formatting
+            return self._board
 
         hidden_board = [['*' for _ in range(8)] for _ in range(8)]
         player_pieces = 'PNBRQK' if perspective == "white" else 'pnbrqk'
@@ -57,21 +58,18 @@ class ChessVar:
             for c in range(8):
                 square = (r, c)
                 piece = self._board[r][c]
-
                 if piece in player_pieces:
-                    hidden_board[r][c] = piece
-
+                    hidden_board[r][c] = piece  # Always show own pieces
                 elif self._is_square_visible(square, perspective):
-                    hidden_board[r][c] = piece
-
+                    hidden_board[r][c] = piece  # Show the piece if it's visible
                 elif self._board[r][c] == ' ':
-                    hidden_board[r][c] = ' '
+                    hidden_board[r][c] = ' '  # Empty squares remain empty
 
         if perspective == "white":
-            return "[\n " + ",\n ".join(str(row) for row in hidden_board) + "\n]"
+            return hidden_board
         else:
             # Reverse the board for black's perspective
-            return "[\n " + ",\n ".join(str(row) for row in hidden_board[::-1]) + "\n]"
+            return hidden_board[::-1]
 
     def make_move(self, from_square, to_square):
         """
@@ -257,12 +255,12 @@ class ChessVar:
         print("]")
 
 # Sample game:
-# game = ChessVar()
-# print(game.make_move('d2', 'd4'))
-# print(game.make_move('g7', 'g5'))
-# print(game.make_move('c1', 'g5'))
-# print(game.make_move('e7', 'e6'))
-# print(game.make_move('g5', 'd8'))
-# print(game.get_board("audience"))
-# print(game.get_board("white"))
-# print(game.get_board("black"))
+game = ChessVar()
+print(game.make_move('d2', 'd4'))
+print(game.make_move('g7', 'g5'))
+print(game.make_move('c1', 'g5'))
+print(game.make_move('e7', 'e6'))
+print(game.make_move('g5', 'd8'))
+print(game.get_board("audience"))
+print(game.get_board("white"))
+print(game.get_board("black"))
