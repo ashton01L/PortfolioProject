@@ -115,28 +115,24 @@ class ChessVar:
         player_pieces = 'PNBRQK' if perspective == "white" else 'pnbrqk'
         opponent_pieces = 'pnbrqk' if perspective == "white" else 'PNBRQK'
 
-        # Always reveal opponent's pieces only when in attack or within legal reach
+        # If player's own piece, reveal it.
+        if self._board[row][col] in player_pieces:
+            return True
+
+        # Only reveal opponents pieces if we can legally reach or attack that square.
         if self._board[row][col] in opponent_pieces:
-            # If this square is an opponent's piece, check if it's visible based on legal movement
             for r in range(8):
                 for c in range(8):
                     piece = self._board[r][c]
                     if piece in player_pieces and self._can_piece_reach((r, c), (row, col), piece):
                         return True
+            # Opponents piece should remain hidden if it cannot be reached
             return False
-
-        # Reveal the square if it contains the player's piece
-        if self._board[row][col] in player_pieces:
-            return True
-
-        # Otherwise, check if the player's piece can legally reach this square
-        for r in range(8):
-            for c in range(8):
-                piece = self._board[r][c]
-                if piece in player_pieces and self._can_piece_reach((r, c), (row, col), piece):
-                    return True
-
+        # Empty square should remain hidden unless player can reach them
         return False
+
+
+
 
     def _is_valid_move(self, piece, from_square, to_square):
         """

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a804ceb8-ee26-494c-b867-6ff3b6d875d0" name="Changes" comment="hopefully the final version(?)">
-      <change beforePath="$PROJECT_DIR$/ChessVar.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChessVar.py" afterDir="false" />
-    </list>
+    <list default="true" id="a804ceb8-ee26-494c-b867-6ff3b6d875d0" name="Changes" comment="maybe final this time" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +122,31 @@
       <option name="project" value="LOCAL" />
       <updated>1733725062947</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="hopefully the final version(?)">
+      <option name="closed" value="true" />
+      <created>1733725586711</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733725586711</updated>
+    </task>
+    <task id="LOCAL-00010" summary="maybe final">
+      <option name="closed" value="true" />
+      <created>1733725791404</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733725791404</updated>
+    </task>
+    <task id="LOCAL-00011" summary="maybe final this time">
+      <option name="closed" value="true" />
+      <created>1733726679305</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733726679305</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,6 +156,8 @@
     <MESSAGE value="updated final version(?)" />
     <MESSAGE value="hopefully the final version" />
     <MESSAGE value="hopefully the final version(?)" />
-    <option name="LAST_COMMIT_MESSAGE" value="hopefully the final version(?)" />
+    <MESSAGE value="maybe final" />
+    <MESSAGE value="maybe final this time" />
+    <option name="LAST_COMMIT_MESSAGE" value="maybe final this time" />
   </component>
 </project>
