@@ -11,35 +11,22 @@ class ChessVar:
     not allowed. There are no 'checks' or 'checkmates, but the game ends when a player's king is captured.
     """
 
-    def __init__(self, perspective="white"):
+    def __init__(self):
         """
         Initializes the game with the standard chess board setup with piece placement, initializes game state
         and starts player turn tracking.
         """
-        # Initialize the board with empty squares ('*')
-        hidden_board = [['*' for _ in range(8)] for _ in range(8)]
-
-        # Set up the board for white (standard starting position)
-        hidden_board[0] = ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r']  # Royal pieces (white)
-        hidden_board[1] = ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p']  # Pawns (white)
-        hidden_board[6] = ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p']  # Pawns (black)
-        hidden_board[7] = ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r']  # Royal pieces (black)
-
-        # Handle black's perspective by reversing the board row-wise
-        if perspective == "black":
-            hidden_board = hidden_board[::-1]
-
-            # Update the first two rows after reversing to match black's starting pieces
-            hidden_board[0] = ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r']  # Royal pieces (black)
-            hidden_board[1] = ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p']  # Pawns (black)
-
-        # Assign the board to the instance variable
-        self._board = hidden_board
-
-        # Initialize the game state
+        self._board = [
+            ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
+            ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+            [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+            [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+            [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+            [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+            ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+            ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R']
+        ]
         self._game_state = "UNFINISHED"
-
-        # Track player turn, default is white to start the game
         self._turn = "white"
 
     def get_game_state(self):
